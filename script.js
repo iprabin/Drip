@@ -265,7 +265,7 @@ var isMobile = false;
 const minusCart = (obj, type) => {
    let value = Number(obj.value);
 
-   if (type == 1) {
+   if (type == 1) { //handles plus
       cart[value].qty += 1;
       $(`#qty-crt[value='${value}']`).text(`${cart[value].qty}`);
       $(`#cart-prc[value='${value}']`).text(`$${(cart[value].qty * Number(cart[value].price)).toFixed(2)}`);
@@ -281,7 +281,7 @@ const minusCart = (obj, type) => {
       $('#tax').text(`${tax.toFixed(2)}`);
       $('#total').text(`${total.toFixed(2)}`);
    }
-   else if (type == 2) {
+   else if (type == 2) { //handles minus
       cart[value].qty -= 1;
       if (cart[value].qty == 0) {
          let numitem = Number($('#count').text());
@@ -305,7 +305,7 @@ const minusCart = (obj, type) => {
       $('#tax').text(`${tax.toFixed(2)}`);
       $('#total').text(`${total.toFixed(2)}`);
    }
-   else {
+   else { //handles remove button
       let numitem = Number($('#count').text());
       let newItm = cart[value].qty;
       newItm = numitem - newItm;
@@ -653,9 +653,9 @@ function delay(ms) {
 
 $("form").submit(function (e) {
    e.preventDefault();
-   let backup = $('#contact').html()
-   $('#contact').empty();
-   $('#contact').append(
+   let backup = $('#contatc-body').html()
+   $('#contatc-body').empty();
+   $('#contatc-body').append(
       `  <div class="container">
             <div class"shadow pt-5 pb-5" style="text-align:center;height:680px;">
                <h1 style="padding-top:${isMobile ? `60%` : `20%`};"> Thank You!</h1>
@@ -670,8 +670,8 @@ $("form").submit(function (e) {
       `
    );
    setTimeout(function () {
-      $('#contact').empty();
-      $('#contact').append(backup);
+      $('#contatc-body').empty();
+      $('#contatc-body').append(backup);
    }, 3000);
 });
 configureView('#grid', coffee);

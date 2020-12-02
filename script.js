@@ -592,7 +592,7 @@ $(window).resize(function () {
 });
 
 const setupFunc = () => {
-   $('#image-overlay').fadeIn(1000);
+   $('#home').fadeIn(1000);
    $('#err').hide();
    $('#succ').hide();
    $('#check-info').hide();
@@ -620,7 +620,7 @@ const clearCart = () => {
 }
 
 const logoLogic = (scroll_pos) => {
-   if (scroll_pos < $('#image-overlay').height() - 90 && !isMobile) {
+   if (scroll_pos < $('#home').height() - 90 && !isMobile) {
       $(".navbar").removeClass('bg-light');
       $(".nav-link").addClass('nav-tra');
       $("#count").css({ "top": '28px' })
@@ -647,9 +647,6 @@ $(document).ready(function () {
       logoLogic(scroll_pos);
    });
 });
-function delay(ms) {
-   return new Promise(resolve => setTimeout(resolve, ms)); //not my code
-}
 
 $("form").submit(function (e) {
    e.preventDefault();

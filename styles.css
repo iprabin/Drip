@@ -1,0 +1,78 @@
+.card {
+    border: none;
+}
+
+.card-body {
+    border: none;
+    border-radius: 0px !important;
+}
+
+.nav-link {
+    font-size: 22px;
+}
+
+.nav-tra {
+    color: white !important;
+}
+
+.shadow {
+    -webkit-box-shadow: -11px 10px 24px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow   : -11px 10px 24px -3px rgba(0, 0, 0, 0.75);
+    box-shadow        : -11px 10px 24px -3px rgba(0, 0, 0, 0.75);
+}
+
+.text-bg {
+    height          : 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    color           : white;
+}
+* {
+    margin    : 0;
+    padding   : 0;
+    box-sizing: border-box;
+    font-family: 'Baskervville', serif;
+}
+
+.logo {
+    filter: contrast(160%);
+}
+.logo-white{
+    filter  : brightness(0) invert(1);
+}
+.pad {
+    padding: 10px;
+    ;
+}
+
+.sm-cp {
+    width: 80%;
+}
+
+input[type='radio'] {
+    transform: scale(2);
+}
+
+.rm-pd {
+    padding: 0px !important;
+    margin : 0px !important;
+}
+
+.card{
+    border: none !important;
+    border-radius: 0px !important;
+}
+#image-overlay{
+    display: none;
+}
+#cartItems{
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+.footer {
+    margin-top:130px; 
+    color           : white;
+    background-color: black;
+    padding: 30px;
+    padding-bottom  : 20px;
+    overflow: hidden;
+}

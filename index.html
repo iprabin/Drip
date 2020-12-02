@@ -1,0 +1,293 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drip - Quality Coffee</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Baskervville&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-md fixed-top navbar-light shadow" id="scroll">
+        <a class="navbar-brand" href="index.html"><img class="logo-white" id="logo" src="Photos/drip.png" height="60"
+                width="40"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto pr-5">
+                <li class="nav-item active">
+                    <a class="nav-link nav-tra" href="#image-overlay">Home</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#cof">Menu</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" id="sim-click" href="#contact">Contact</a>
+                </li>
+                <li class="nav-item active">
+                    <button type="button" class=" nav-link btn nav-tra" data-toggle="modal" data-target="#cart"
+                        onclick="handleCartItem();">
+                        <svg width="2.5em" height="2.5em" viewBox="0 0 16 16" class="bi bi-cart3" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .49.598l-1 5a.5.5 0 0 1-.465.401l-9.397.472L4.415 11H13a.5.5 0 0 1 0 1H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l.84 4.479 9.144-.459L13.89 4H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm7 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                        </svg>
+                        <div style="position: absolute; right: 85px; border-radius: 50%; height: 20px; width: 20px; font-size: 12px; top:28px"
+                            id="count">
+                            0
+                        </div>
+                    </button>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div data-spy="scroll" data-target="#scroll" data-offset="1000">
+        <div id="IsMobile" class="d-block d-lg-none"></div>
+
+        <div class="card bg-white text-white rounded-0 display-hide" id="image-overlay" \>
+            <img src="Photos/coffee2.jpg" alt="cup of black coffee" title="cup of coffee" class="card-img rounded-0">
+            <div class="card-img-overlay text-center d-flex flex-column justify-content-center text-bg rounded-0">
+                <h6 style="font-size: 1.5em;">Come visit us!</h6>
+                <h1 class="card-title" style="font-size: 2.5em;">Making coffee better one cup at a time</h1>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3 col-md-4 col-sm-6">
+                            <button class="btn btn-primary" style="font-size: 20px;"
+                                onclick="window.open('https://www.google.com/maps?ll=38.63652,-90.23059&z=15&t=m&hl=en&gl=US&mapclient=embed&q=Midtown+St.+Louis,+MO+63103', '_blank');">
+                                Get Direction
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div id="cof" style="padding-top: 130px;">
+                <h1 class="text-center" id="menu">Coffee</h1>
+                <div class="row" id="grid"></div>
+            </div>
+            <div class="fod">
+                <h1 class="text-center mt-5">Pastries</h1>
+                <div class="row" id="food"></div>
+            </div>
+            <h1 class="text-center" id="contact"></h1>
+            <div class="shadow" style="margin-top:130px; padding:20px;">
+                <h1 style="text-align: center; padding-bottom: 20px;">Keep In Touch</h1>
+                <form action="" method="GET">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <label for="first">First Name</label>
+                            <input style="width: 70%;" type="text" class="form-control" placeholder="First name"> <br>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-12">
+                            <label for="last">Last Name</label>
+                            <input style="width: 70%;" type="text" class="form-control" placeholder="Last name"> <br>
+                        </div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" class="form-control" placeholder="123-456-7890">
+                                <small class="form-text text-muted">We'll never share your phone number with anyone
+                                    else.</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12"></div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <label for="email">Email address</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                                <small id="emailHelp" class="form-text text-muted">We'll never share your email with
+                                    anyone else.</small>
+                            </div>
+                        </div>
+                        <div class="col-lg-2 col-md-12 col-sm-12"></div>
+                    </div>
+
+                    <div class="row justify-content-center">
+                        <div class="col-lg-8 col-md-12 col-sm-12">
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea class="form-control" id="message" rows="8"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-self-center">
+                        <button type="reset" class="btn btn-danger" style="margin-right:10px;">Reset</button>
+                        <button type="submit" id="sub" class="btn btn-success" data-toggle="modal">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="cart" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" style="font-size: 2em;">Cart</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="cartBody">
+                    <div id="cartItems"></div>
+                    <h3 id="empty">Your Cart is Empty</h3>
+                    <div class="modal-footer border-0">
+                        <div id="check-info">
+                            <div class="row">
+                                <div class="col-6">
+                                    <h6>Sub-Total:</h6>
+                                </div>
+                                <div class="col-1 rm-pd">
+                                    <h6 class="rm-pd" style="float: right;">$</h6>
+                                </div>
+                                <div class="col-5 rm-pd">
+                                    <h6 class="rm-pd" id="sub-total"></h6>
+                                </div>
+
+                                <div class="col-6">
+                                    <h6>Tax:</h6>
+                                </div>
+                                <div class="col-1 rm-pd">
+                                    <h6 class="rm-pd" style="float: right;">$</h6>
+                                </div>
+                                <div class="col-5 rm-pd">
+                                    <h6 id="tax"></h6>
+                                </div>
+                                <div class="col-6">
+                                    <h6>Total:</h6>
+                                </div>
+                                <div class="col-1 rm-pd">
+                                    <h6 class="rm-pd" style="float: right;">$</h6>
+                                </div>
+                                <div class="col-5 rm-pd">
+                                    <h6 id="total"></h6>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-dark" data-dismiss="modal"
+                            onclick="clearCart();">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="item" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="name" style="font-size: 2em;">Name of Item</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body border-0">
+                    <p id="err" style="color: red;"> * Please select all the fields</p>
+                    <img id="model-img" src="" width="60%">
+                    <h4 id="price" style="text-align: center;"></h4>
+                    <div id="sizes"></div>
+                    <div id="flavors"></div>
+                    <div id="options"></div>
+                    <h1 style="color: rgb(137, 206, 35); text-align: center; padding: 10px;" id="succ">
+                        Success
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-bag-check-fill"
+                            fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd"
+                                d="M5.5 3.5a2.5 2.5 0 0 1 5 0V4h-5v-.5zm6 0V4H15v10a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V4h3.5v-.5a3.5 3.5 0 1 1 7 0zm-.646 5.354a.5.5 0 0 0-.708-.708L7.5 10.793 6.354 9.646a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                        </svg>
+                    </h1>
+                    <div class="modal-footer border-0">
+                        <div class="d-flex mr-auto">
+                            <button type="button" class="btn btn-light" id="minus">
+                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-dash" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                                </svg>
+                            </button>
+                            <h3 class="pl-2 pr-2 pt-1" id="qty">1</h3>
+                            <button type="button" class="btn btn-light" id="plus">
+                                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-plus" fill="currentColor"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd"
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <button type="button" class="btn btn-light" id="addtocart">
+                            <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-basket3-fill"
+                                fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd"
+                                    d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172z" />
+                                <path
+                                    d="M2.468 15.426L.943 9h14.114l-1.525 6.426a.75.75 0 0 1-.729.574H3.197a.75.75 0 0 1-.73-.574z" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="row">
+            <div class="text-center col-lg-4 col-sm-12 col-md-6">
+                <h3>Hours</h3>
+                <ul style="list-style-type: none;">
+                    <li>Monday 7am - 9pm</li>
+                    <li>Tuesday 7am - 9pm</li>
+                    <li>Wednesday 7am - 9pm</li>
+                    <li>Thrusday 7am - 9pm</li>
+                    <li>Friday 7am - 9pm</li>
+                    <li>Saturday 7am - 9pm</li>
+                    <li>Sunday 7am - 9pm</li>
+                </ul>
+
+            </div>
+            <div class="text-center col-lg-4 col-sm-12 col-md-6">
+                <h3>Location</h3>
+                <div>
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3117.238863158049!2d-90.19255411981385!3d38.620385670928805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87d8b30322d9f5b1%3A0x5289e221dd1293e7!2sUS-40%2C%20St.%20Louis%2C%20MO%2063102!5e0!3m2!1sen!2sus!4v1606885860869!5m2!1sen!2sus"
+                        width="400" height="230" frameborder="0" style="border:0;" allowfullscreen=""
+                        aria-hidden="false" tabindex="0"></iframe>
+                </div>
+            </div>
+            <div class="text-center col-lg-4 col-sm-12 col-md-6">
+                <h3>Get In Touch</h3>
+                <a href="https://www.facebook.com"><i style= "color: white;" class="fa fa-facebook fa-3x" aria-hidden="true"></i>                </a>
+                <a href="https://www.twitter.com"><i style= "color: white;" class="fa fa-instagram fa-3x" aria-hidden="true"></i>                </a>
+                <a href="https://www.instagram.com"><i style= "color: white;" class="fa fa-twitter fa-3x" aria-hidden="true"></i>                </a>
+                <a href="mailto:regmip202@gmail.com@gmail.com"><i style= "color: white;" class="fa fa-envelope fa-3x" aria-hidden="true"></i>                </a>
+            </div>
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div>&copy Prabin Regmi - 2020</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+        </script>
+    <script src="https://use.fontawesome.com/7b68f242aa.js"></script>
+
+</body>
+
+</html>
